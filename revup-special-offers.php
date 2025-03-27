@@ -1,5 +1,4 @@
 <?php
-
 /*
   Plugin Name: RevUp Special Offers
   Plugin URI: (TODO: Add Github)
@@ -14,20 +13,5 @@ if (!defined('ABSPATH')) {
   exit;
 }
 
-add_action('init', 'revup_special_offers_post_type');
-function revup_special_offers_post_type()
-{
-  register_post_type('revup-special-offers', array(
-    'labels' => array(
-      'name' => 'Special Offers',
-      'singular_name' => 'Special Offer',
-      'add_new_item' => 'Add New Special Offer',
-      'edit_item' => 'Edit Special Offer'
-    ),
-    'description' => 'Special Offers',
-    'public' => true,
-    'has_archive' => true,
-    'supports' => array('title', 'editor', 'thumbnail'),
-    'menu_icon' => 'dashicons-star-filled',
-  ));
-}
+require plugin_dir_path(__FILE__) . 'includes/post-type.php';
+require plugin_dir_path(__FILE__) . 'includes/shortcode.php';
