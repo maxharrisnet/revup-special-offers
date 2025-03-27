@@ -1,5 +1,9 @@
 <?php
 
+if (! defined('ABSPATH')) {
+  exit;
+}
+
 function revup_special_offers_meta_fields($post)
 {
   wp_nonce_field('revup_special_offers_meta_box', 'revup_special_offers_meta_nonce');

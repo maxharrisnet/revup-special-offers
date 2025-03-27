@@ -1,15 +1,31 @@
 <?php
 
+if (! defined('ABSPATH')) {
+  exit;
+}
+
 add_shortcode('revup_special_offers', 'revup_special_offers_shortcode');
 function revup_special_offers_shortcode($atts)
 {
+
+  $current_date = current_time('Y-m-d');
+
   $args = array(
     'post_type' => 'revup-special-offers',
-    'posts_per_page' => 3,
-    'orderby' => 'expiration_date',
-    'meta_type' => 'DATE',
+    'post_status' => 'publish',
+    'posts_per_page' => 2,
     'meta_key' => 'revup_special_offer_expiration_date',
-    'order' => 'ASC'
+    'orderby' => 'meta_value',
+    'meta_type' => 'DATE',
+    'order' => 'ASC',
+    'meta_query' => array(
+      array(
+        'key' => 'revup_special_offer_expiration_date',
+        'value' => $current_date,
+        'compare' => '>=',
+        'type' => 'DATE'
+      )
+    )
   );
 
   $query = new WP_Query($args);
@@ -23,17 +39,21 @@ function revup_special_offers_shortcode($atts)
       $link = get_post_meta(get_the_ID(), 'revup_special_offer_link', true);
 
       // Item output 
-      $output .= '<li><a href="' . $link . '">';
-      $output .= '<h3>' . $title . ' (Expires: ' . $expiration_date . ')</h3>';
+      $output .= '<li>';
+      $output .= '<h3>' . $title . '</h3>';
       $output .= '<p>' . get_the_content() . '</p>';
-      $output .= '</a></li>';
+      $output .= '<div class="revup-cta-container">';
+      $output .= '<a href="' . $link . '" class="revup-button" target="_blank">View Offer</a>';
+      $output .= '<span class="revup-special-offer-expiration-date">Expires: <time>' . $expiration_date . '</time></span>';
+      $output .= '</li>';
     }
     $output .= '</ul>';
+    $output .= get_the_posts_pagination();
   } else {
     $output = 'No special offers available.';
   }
 
   wp_reset_postdata();
 
-  return $output; // TODO: Sanatize output
+  return wp_kses_post($output);
 }

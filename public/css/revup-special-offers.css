@@ -1,0 +1,76 @@
+.revup-special-offers-list {
+	display: flex;
+	flex-flow: column wrap;
+	margin: 0 auto;
+	gap: 20px;
+	padding: 20px;
+	list-style: none;
+	border: 2px solid #f1f1f1;
+	border-radius: 30px;
+	width: 100%;
+	max-width: 1200px;
+	box-sizing: border-box; /* Prevents padding from increasing the width of the container */
+}
+
+.revup-special-offers-list li {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	flex: 0 0 100%;
+	max-width: 100%;
+	padding: 30px;
+	border: 2px solid #f1f1f1;
+	border-radius: 30px;
+	box-sizing: border-box; /* Prevents padding from increasing the width of the item */
+}
+
+.revup-special-offers-list li h3 {
+	margin: 0 0 10px;
+	font-size: 1.5em;
+}
+
+.revup-special-offers-list li p {
+	margin: 0;
+}
+
+.revup-cta-container {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-around;
+	padding: 10px 30px;
+	margin-top: 25px;
+	border: 0;
+	border-top: 2px solid #999;
+}
+
+a.revup-button {
+	display: inline-block;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	margin: 20px 0;
+	padding: 10px 20px;
+	border-radius: 20px;
+	text-decoration: none;
+}
+
+a.revup-button:hover {
+	background-color: #333;
+}
+
+.revup-special-offer-expiration-date {
+	font-size: 0.72em;
+	text-align: center;
+	display: block;
+}
+
+@media screen and (min-width: 768px) {
+	.revup-special-offers-list {
+		flex-flow: row wrap;
+	}
+
+	.revup-special-offers-list li {
+		flex: 0 0 48%;
+		max-width: 48%;
+	}
+}
