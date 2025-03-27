@@ -2,25 +2,23 @@
 
 function revup_special_offers_meta_fields($post)
 {
-  // Add nonce for security
   wp_nonce_field('revup_special_offers_meta_box', 'revup_special_offers_meta_nonce');
 
   $title = get_post_meta($post->ID, 'revup_special_offer_display_title', true);
   $expiration_date = get_post_meta($post->ID, 'revup_special_offer_expiration_date', true);
   $link = get_post_meta($post->ID, 'revup_special_offer_link', true);
-?>
-  <label for="revup_special_offer_display_title">Display Title:</label>
-  <input type="text" id="revup_special_offer_display_title" name="revup_special_offer_display_title" value="<?php echo esc_attr($title); ?>" />
-  <br />
-  <label for="revup_special_offer_expiration_date">Expiration Date:</label>
-  <input type="text" id="revup_special_offer_expiration_date" name="revup_special_offer_expiration_date" value="<?php echo esc_attr($expiration_date); ?>" />
-  <br />
-  <label for="revup_special_offer_link">Link:</label>
-  <input type="text" id="revup_special_offer_link" name="revup_special_offer_link" value="<?php echo esc_attr($link); ?>" />
-<?php
+?><div class="revup-meta-field-container">
+    <label for="revup_special_offer_display_title">Display Title:</label>
+    <input type="text" id="revup_special_offer_display_title" name="revup_special_offer_display_title" value="<?php echo esc_attr($title); ?>" />
+    <br />
+    <label for="revup_special_offer_expiration_date">Expiration Date:</label>
+    <input type="date" id="revup_special_offer_expiration_date" name="revup_special_offer_expiration_date" value="<?php echo esc_attr($expiration_date); ?>" />
+    <br />
+    <label for="revup_special_offer_link">Link:</label>
+    <input type="text" id="revup_special_offer_link" name="revup_special_offer_link" value="<?php echo esc_attr($link); ?>" />
+  <?php
 }
 
-// Register metabox
 add_action('add_meta_boxes', 'revup_special_offers_add_meta_box');
 function revup_special_offers_add_meta_box()
 {
@@ -29,8 +27,8 @@ function revup_special_offers_add_meta_box()
     'Special Offer Details',
     'revup_special_offers_meta_fields',
     'revup-special-offers',
-    'normal',
-    'default'
+    'side',
+    'high'
   );
 }
 
@@ -46,7 +44,7 @@ function revup_special_offers_save_meta($post_id)
     return;
   }
 
-  // Save fields
+  // Save field data
   if (isset($_POST['revup_special_offer_display_title'])) {
     update_post_meta(
       $post_id,

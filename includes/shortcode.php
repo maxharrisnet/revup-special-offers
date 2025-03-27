@@ -15,17 +15,18 @@ function revup_special_offers_shortcode($atts)
   $query = new WP_Query($args);
 
   if ($query->have_posts()) {
-    $output = '<ul>';
+    $output = '<ul class="revup-special-offers-list">';
     while ($query->have_posts()) {
       $query->the_post();
       $title = get_post_meta(get_the_ID(), 'revup_special_offer_display_title', true);
       $expiration_date = get_post_meta(get_the_ID(), 'revup_special_offer_expiration_date', true);
       $link = get_post_meta(get_the_ID(), 'revup_special_offer_link', true);
-      $output .= '<li>';
-      $output .= '<a href="' . $link . '">';
-      $output .= $title . ' (Expires: ' . $expiration_date . ')';
-      $output .= '</a>';
-      $output .= '</li>';
+
+      // Item output 
+      $output .= '<li><a href="' . $link . '">';
+      $output .= '<h3>' . $title . ' (Expires: ' . $expiration_date . ')</h3>';
+      $output .= '<p>' . get_the_content() . '</p>';
+      $output .= '</a></li>';
     }
     $output .= '</ul>';
   } else {
