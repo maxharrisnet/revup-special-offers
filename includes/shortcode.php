@@ -31,7 +31,8 @@ function revup_special_offers_shortcode($atts)
   $query = new WP_Query($args);
 
   if ($query->have_posts()) {
-    $output = '<ul class="revup-special-offers-list">';
+    $output = '<div class="revup-special-offers-wrapper alignfull">';
+    $output .= '<ul class="revup-special-offers-list">';
     while ($query->have_posts()) {
       $query->the_post();
       $title = get_post_meta(get_the_ID(), 'revup_special_offer_display_title', true);
@@ -54,6 +55,7 @@ function revup_special_offers_shortcode($atts)
       $output .= '</li>';
     }
     $output .= '</ul>';
+    $output .= '</div>';
     $output .= get_the_posts_pagination();
   } else {
     $output = 'No special offers available.';

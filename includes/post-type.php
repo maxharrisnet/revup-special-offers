@@ -13,13 +13,13 @@ function revup_special_offers_meta_fields($post)
   $link = get_post_meta($post->ID, 'revup_special_offer_link', true);
 ?><div class="revup-meta-field-container">
     <label for="revup_special_offer_display_title">Display Title:</label>
-    <input type="text" id="revup_special_offer_display_title" name="revup_special_offer_display_title" value="<?php echo esc_attr($title); ?>" />
+    <input type="text" id="revup_special_offer_display_title" name="revup_special_offer_display_title" value="<?php echo esc_attr($title); ?>" required />
     <br />
     <label for="revup_special_offer_expiration_date">Expiration Date:</label>
-    <input type="date" id="revup_special_offer_expiration_date" name="revup_special_offer_expiration_date" value="<?php echo esc_attr($expiration_date); ?>" />
+    <input type="date" id="revup_special_offer_expiration_date" name="revup_special_offer_expiration_date" value="<?php echo esc_attr($expiration_date); ?>" required />
     <br />
     <label for="revup_special_offer_link">Link:</label>
-    <input type="text" id="revup_special_offer_link" name="revup_special_offer_link" value="<?php echo esc_attr($link); ?>" />
+    <input type="text" id="revup_special_offer_link" name="revup_special_offer_link" value="<?php echo esc_attr($link); ?>" required />
   <?php
 }
 
@@ -37,6 +37,7 @@ function revup_special_offers_add_meta_box()
 }
 
 // Save metabox data
+// TODO: Server-side validation
 add_action('save_post_revup-special-offers', 'revup_special_offers_save_meta');
 function revup_special_offers_save_meta($post_id)
 {
