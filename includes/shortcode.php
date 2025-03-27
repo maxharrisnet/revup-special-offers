@@ -34,5 +34,5 @@ function revup_special_offers_shortcode($atts)
 
   wp_reset_postdata();
 
-  return $output;
+  return $output; // TODO: Sanatize output
 }
