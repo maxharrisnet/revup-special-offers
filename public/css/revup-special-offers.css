@@ -1,12 +1,11 @@
 .revup-special-offers-list {
 	display: flex;
 	flex-flow: column wrap;
+	justify-content: center;
 	margin: 0 auto;
 	gap: 20px;
-	padding: 20px;
+	padding: 0;
 	list-style: none;
-	border: 2px solid #f1f1f1;
-	border-radius: 30px;
 	width: 100%;
 	max-width: 1200px;
 	box-sizing: border-box; /* Prevents padding from increasing the width of the container */
@@ -25,33 +24,48 @@
 }
 
 .revup-special-offers-list li h3 {
-	margin: 0 0 10px;
+	margin: 0 0 20px;
 	font-size: 1.5em;
 }
 
 .revup-special-offers-list li p {
 	margin: 0;
+	margin-bottom: 20px;
+	max-width: 80%;
+}
+
+.revup-special-offer-info-container {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	padding: 20px 10px;
+	text-align: center;
 }
 
 .revup-cta-container {
 	display: flex;
 	flex-flow: column wrap;
-	justify-content: space-around;
-	padding: 10px 30px;
-	margin-top: 25px;
+	align-items: center;
+	padding: 20px 30px;
 	border: 0;
 	border-top: 2px solid #999;
 }
 
 a.revup-button {
+	font-size: 0.86em;
 	display: inline-block;
 	background-color: #000;
 	color: #fff;
 	text-align: center;
+	font-weight: 600;
+	text-transform: uppercase;
 	margin: 20px 0;
-	padding: 10px 20px;
+	padding: 15px 40px;
 	border-radius: 20px;
 	text-decoration: none;
+	transition:
+		background-color 0.3s,
+		color 0.3s;
 }
 
 a.revup-button:hover {
@@ -64,13 +78,18 @@ a.revup-button:hover {
 	display: block;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
 	.revup-special-offers-list {
 		flex-flow: row wrap;
+		gap: 40px;
 	}
 
 	.revup-special-offers-list li {
 		flex: 0 0 48%;
 		max-width: 48%;
+	}
+
+	.revup-special-offers-list li a {
+		max-width: 100%;
 	}
 }

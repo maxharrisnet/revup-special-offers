@@ -87,7 +87,7 @@ function revup_special_offers_post_type()
     'description' => 'Special Offers',
     'menu_icon' => 'dashicons-star-filled',
     'public' => true,
-    'has_archive' => true,
+    'has_archive' => false,
     'supports' => array('title', 'editor'),
   ));
 }
