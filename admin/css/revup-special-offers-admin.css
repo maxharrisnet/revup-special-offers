@@ -1,0 +1,8 @@
+.revup-meta-field-container label.required:after {
+	content: ' *';
+	color: red;
+}
+.revup-meta-field-container input {
+	width: 100%;
+	margin-bottom: 10px;
+}
