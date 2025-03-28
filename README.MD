@@ -2,7 +2,7 @@
 
 ## Developed by: [Max Harris](www.maxharris.net) 👨🏾‍💻
 
-This plugin is written as part of a coding assesment for RevUp. TItis designed to be a simple plugin that allows for the creation of special offers for products.
+This plugin is written as part of a coding assesment for RevUp. It os designed to be a simple plugin that allows for the creation of special offers for products.
 
 ### Here's what it does:
 

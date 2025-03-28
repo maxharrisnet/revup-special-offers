@@ -1,6 +1,6 @@
 <?php
-// If uninstall not called from WordPress, exit
-if (!defined('WP_UNINSTALL_PLUGIN')) {
+
+if (!defined('ABSPATH') || !defined('WP_UNINSTALL_PLUGIN')) {
   exit;
 }
 
@@ -17,9 +17,8 @@ $posts_with_shortcode = $wpdb->get_results(
   )
 );
 
-// Remove the shortcode from each post
+// Remove the shortcode from each post's content
 foreach ($posts_with_shortcode as $post) {
-  // Remove the shortcode from content
   $new_content = preg_replace('/\[revup_special_offers.*?\]/', '', $post->post_content);
 
   // Update the post
@@ -40,5 +39,5 @@ foreach ($special_offers as $offer) {
   wp_delete_post($offer->ID, true);
 }
 
-// 3. Clean up post meta
+// Clean up post meta
 $wpdb->query("DELETE FROM {$wpdb->postmeta} WHERE meta_key LIKE 'revup_special_offer_%'");

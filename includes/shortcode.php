@@ -4,7 +4,6 @@ if (! defined('ABSPATH')) {
   exit;
 }
 
-add_shortcode('revup_special_offers', 'revup_special_offers_shortcode');
 function revup_special_offers_shortcode($atts)
 {
 
@@ -65,3 +64,4 @@ function revup_special_offers_shortcode($atts)
 
   return wp_kses_post($output);
 }
+add_shortcode('revup_special_offers', 'revup_special_offers_shortcode');
