@@ -1,6 +1,6 @@
 # RevUp Special Offers Plugin
 
-## Written by: Max Harris 👨🏾‍💻
+## Developed by: [Max Harris](www.maxharris.net) 👨🏾‍💻
 
 This plugin is written as part of a coding assesment for RevUp. TItis designed to be a simple plugin that allows for the creation of special offers for products.
 
@@ -21,7 +21,7 @@ This plugin is written as part of a coding assesment for RevUp. TItis designed t
 - Mobile-first responsive design (uses the @container CSS query to allow nesting within containers)
 - Deleting shortcode and data on plugin deactivation
 
-## TODO 📋
+## Future Improvements 📋
 
 Here are some things that I would add to this plugin with more time:
 
