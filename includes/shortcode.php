@@ -4,6 +4,19 @@ if (! defined('ABSPATH')) {
   exit;
 }
 
+/**
+ * Shortcode to display special offers
+ * This shortcode retrieves and displays special offers from the 'revup-special-offers' post type.
+ * It shows the title, content, expiration date, and a link to view the offer.
+ * The offers are sorted by expiration date, and only those that have not expired are displayed.
+ * The shortcode can be used in any post or page to dynamically display the current special offers. 
+ * 
+ * Usage: [revup_special_offers]
+ * 
+ * @return string HTML output of special offers
+ * 
+ */
+
 function revup_special_offers_shortcode($atts)
 {
   $current_date = current_time('Y-m-d');

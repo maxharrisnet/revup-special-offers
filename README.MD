@@ -27,7 +27,7 @@ Here are some things that I would add to this plugin with more time:
 
 - Add a settings page to allow for the configuration of the plugin (including optional data cleanup on deactivation)
 - Server side validation of meta fields in the editor (currently relying the "required" attribute)
-- Pagination
+- Pagination (with option to set the number of offers per page)
 - Archive page for special offers (depending on requirements)
 - Functionality for evergreen offers (i.e. offers that are always available)
 - Customization options for the button (classes, text, etc.)

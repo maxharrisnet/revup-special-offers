@@ -15,7 +15,6 @@ if (!defined('ABSPATH')) {
 
 require_once plugin_dir_path(__FILE__) . 'includes/post-type.php';
 require_once plugin_dir_path(__FILE__) . 'includes/shortcode.php';
-// TODO: Remove data on uninstall (with prompt)
 
 // Frontend styles
 function revup_special_offers_enqueue_styles()

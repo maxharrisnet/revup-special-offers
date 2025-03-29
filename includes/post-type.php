@@ -4,6 +4,17 @@ if (! defined('ABSPATH')) {
   exit;
 }
 
+/**
+ * Custom post type for special offers
+ * This code registers a custom post type called 'revup-special-offers' in WordPress.
+ * It allows users to create and manage special offers with a title, content, expiration date, and a link.
+ * The post type is displayed in the WordPress admin menu with a star icon.
+ * The post type supports the title and editor fields, and it is publicly accessible.
+ * 
+ * Usage: This works in conjuction with the shortcode [revup_special_offers] to display the special offers on the front end.
+ * 
+ */
+
 function revup_special_offers_meta_fields($post)
 {
   wp_nonce_field('revup_special_offers_meta_box', 'revup_special_offers_meta_nonce');
