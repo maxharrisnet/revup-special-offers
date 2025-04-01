@@ -20,6 +20,7 @@ This plugin is written by Max Harris as part of a coding assesment for RevUp. It
 - Query filtering for offers that are published and have not expired yet
 - Mobile-first responsive design (uses the @container CSS query to allow nesting within containers)
 - Deleting shortcode and data on plugin deactivation
+- Deleting data on plugin uninstall
 
 ## Future Improvements 📋
 
