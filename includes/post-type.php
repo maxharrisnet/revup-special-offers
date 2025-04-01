@@ -31,7 +31,8 @@ function revup_special_offers_meta_fields($post)
     <br />
     <label for="revup_special_offer_link">Link:</label>
     <input type="text" id="revup_special_offer_link" name="revup_special_offer_link" value="<?php echo esc_attr($link); ?>" required />
-  <?php
+  </div>
+<?php
 }
 
 add_action('add_meta_boxes', 'revup_special_offers_add_meta_box');
@@ -91,7 +92,7 @@ function revup_special_offers_post_type()
 {
   register_post_type('revup-special-offers', array(
     'labels' => array(
-      'name' => 'Special Offers',
+      'name' => __('Special Offers', revup),
       'singular_name' => 'Special Offer',
       'add_new_item' => 'Add New Special Offer',
       'edit_item' => 'Edit Special Offer'

@@ -64,7 +64,8 @@ function revup_special_offers_shortcode($atts)
             </div>
             <div class="revup-cta-container">
               <a href="<?php echo esc_url($link); ?>" class="revup-button" target="_blank">View Offer</a>
-              <span class="revup-special-offer-expiration-date">Expires: <time><?php echo esc_html($expiration_date); ?></time></span>
+              <!-- Localized date -->
+              <span class="revup-special-offer-expiration-date">Expires: <time><?php echo esc_html(date_i18n(get_option('date_format'), strtotime($expiration_date))); ?></time></span>
             </div>
           </li>
         <?php endwhile; ?>
@@ -73,7 +74,7 @@ function revup_special_offers_shortcode($atts)
 <?php
     echo get_the_posts_pagination();
   } else {
-    echo 'No special offers available.';
+    echo __('No special offers available.', 'revup');
   }
 
   wp_reset_postdata();

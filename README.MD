@@ -2,7 +2,7 @@
 
 ## Developed by: [Max Harris](www.maxharris.net) 👨🏾‍💻
 
-This plugin is written as part of a coding assesment for RevUp. It os designed to be a simple plugin that allows for the creation of special offers for products.
+This plugin is written by Max Harris as part of a coding assesment for RevUp. It os designed to be a simple plugin that allows for the creation of special offers for products.
 
 ### Here's what it does:
 
@@ -15,8 +15,8 @@ This plugin is written as part of a coding assesment for RevUp. It os designed t
 
 - Demonstrates file/folder structure
 - Blocking direct access to PHP files
-- Sanatizing and escaping data
-- Namespacing functions and classes to prevent conflicts with other plugins/css
+- Sanitizing and escaping data
+- Namescaling functions and classes to prevent conflicts with other plugins/css
 - Query filtering for offers that are published and have not expired yet
 - Mobile-first responsive design (uses the @container CSS query to allow nesting within containers)
 - Deleting shortcode and data on plugin deactivation
@@ -31,3 +31,6 @@ Here are some things that I would add to this plugin with more time:
 - Archive page for special offers (depending on requirements)
 - Functionality for evergreen offers (i.e. offers that are always available)
 - Customization options for the button (classes, text, etc.)
+- Better internationalization (i18n) support
+- Better documentation
+- Better error and empty state handling
